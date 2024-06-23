@@ -6,6 +6,7 @@ import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        val search = findViewById<CardView>(R.id.search)
+        val search = findViewById<ConstraintLayout>(R.id.cl2)
+        search.setOnClickListener{
+            startActivity(Intent(this,MainActivity2::class.java))
+            finish()
+        }
 
     }
 }
